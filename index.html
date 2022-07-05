@@ -8,28 +8,41 @@
     <link rel="stylesheet" href="css/style.css">    
 </head>
 <body>
-    <header>
-        <h1>Tamagotchi</h1>
-        <div class="rules">
-            <div id="rules1">Welcome to your very own Tamagotchi pet!</div>
-            <div id="rules2">Your pet has three critical stats: Hunger, Sleepiness, and Boredom.</div>
-            <div id="rules3">If any of the stats hit 10, your pet will die a slow and painful death.</div>
-            <div id="rules4">Take care of your pet so it lives a long and prosperous life!</div>
+    <h1>Tamagotchi</h1>
+    <div class="homescreen">
+        <div id="rules1">Welcome to your very own Tamagotchi pet!</div>
+        <div id="rules2">Your pet has three critical stats: Hunger, Sleepiness, and Boredom.</div>
+        <div id="rules3">If any of the stats hit 10, your pet will die a slow and painful death.</div>
+        <div id="rules4">Take care of your pet so it lives a long and prosperous life!</div>
+    </div>
+    <div class="buttons">
+        <button id="start">Start!</button>
+        <button id="feed">Feed</button>
+        <button id="sleep">Sleep</button>
+        <button id="play">Play</button>
+    </div>
+    <div class="stats">
+        <h2>Stats</h2>
+        <div class="hunger">
+            <div id="hunger-word">Hunger:</div>
+            <div id="hunger-number">0</div>
         </div>
-        <div class="buttons">
-            <button id="start">Start!</button>
-            <button id="feed">Feed</button>
-            <button id="sleep">Sleep</button>
-            <button id="play">Play</button>
+        <div class="sleepiness">
+            <div id="sleepiness-word">Sleepiness:</div>
+            <div id="sleepiness-number">0</div>
         </div>
-        <div class="stats">
-            <div class="hunger"></div>
-            <div class="sleepiness"></div>
-            <div class="boredom"></div>
+        <div class="boredom">
+            <div id="boredom-word">Boredom:</div>
+            <div id="boredom-number">0</div>
         </div>
+    </div>
+    <div class="game">
+        <div class="environment"></div>
         <div class="character">
+            <div class="egg"></div>
+            <div class="hatched"></div>
         </div>
-    </header>
+    </div>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
