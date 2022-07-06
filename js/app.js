@@ -8,41 +8,57 @@ class Tamagotchi {
     }
     //Stats Intervals
     hungerInterval () {
-        this.hunger += 1
+        let interval = setInterval(() => {
+            this.hunger += 1
+            hungerNumber.innerText = this.hunger
+            if(character.hunger >= 10) {
+                clearInterval(interval)
+            }
+        }, 1000)
     }
     sleepinessInterval () {
-        this.sleepiness += 1
+        let interval = setInterval(() => {
+            this.sleepiness += 1
+            sleepinessNumber.innerText = this.sleepiness
+            if(character.sleepiness >= 10) {
+                clearInterval(interval)
+            }
+        }, 1000)
     }
     boredomInterval () {
-        this.bredom += 1
+        let interval = setInterval(() => {
+            this.boredom += 1
+            boredomNumber.innerText = this.boredom
+            if(character.boredom >= 10) {
+                clearInterval(interval)
+            }
+        }, 1000)
     }
 }
 
 //Instantiate Tamagotchi
-const character = new Tamagotchi("", 0, 0, 0)
+let character = new Tamagotchi("", 0, 0, 0)
 
 //Game Class
-class Game extends Tamagotchi{
-    constructor(name, hunger, sleepiness, boredom) {
-        super(name, hunger, sleepiness, boredom)
-        this.name = name
-        this.hunger = hunger
-        this.sleepiness = sleepiness
-        this.boredom = boredom
-    }
-    //Button Functions
-    startButton () {
-        homescreen.style.display = "none"
-    }
-    feedButton () {
+class Game{
 
-    }
-    sleepButton () {
+}
 
-    }
-    playButton () {
+//Functions
+function startButton () {
+    homescreen.style.display = "none"
+    start.style.display = "none"
+    let username = prompt("Please enter your new pet's name")
+    character = new Tamagotchi(username, 0, 0, 0)
+}
+function feedButton () {
 
-    }
+}
+function sleepButton () {
+
+}
+function playButton () {
+
 }
 
 //HTML Classes, Tags, IDs
@@ -52,24 +68,19 @@ const rules2 = document.querySelector("#rules2")
 const rules3 = document.querySelector("#rules3")
 const rules4 = document.querySelector("#rules4")
 const buttons = document.querySelector(".buttons")
-const startButton = document.querySelector("#start")
-const feedButton = document.querySelector("#feed")
-const sleepButton = document.querySelector("#sleep")
-const playButton = document.querySelector("#play")
+const start = document.querySelector("#start")
+const feed = document.querySelector("#feed")
+const sleep = document.querySelector("#sleep")
+const play = document.querySelector("#play")
 const stats = document.querySelector(".stats")
 const hungerNumber = document.querySelector("#hunger-number")
 const sleepinessNumber = document.querySelector("#sleepiness-number")
 const boredomNumber = document.querySelector("#boredom-number")
 
 //Event Listeners
-document.querySelector("#start").addEventListener("click", () => {
-    let interval = setInterval(() => {
-        character.hungerInterval()
-        character.sleepinessInterval()
-        character.boredomInterval()
-        character.startButton()
-        if(character.hunger >= 10 || character.sleepiness >= 10 || character.boredom >= 10) {
-            clearInterval(interval)
-        }
-    }, 1000)
+start.addEventListener("click", () => {
+    startButton()
+    character.hungerInterval()
+    character.sleepinessInterval()
+    character.boredomInterval()
 })
