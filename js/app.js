@@ -39,27 +39,27 @@ class Tamagotchi {
 //Instantiate Tamagotchi
 let character = new Tamagotchi("", 0, 0, 0)
 
-//Game Class
-class Game{
-
+//Game Object
+let game = {
+    startButton () {
+        homescreen.style.display = "none"
+        start.style.display = "none"
+        let username = prompt("Please enter your new pet's name")
+        character = new Tamagotchi(username, 0, 0, 0)
+    },
+    feedButton () {
+    
+    },
+    sleepButton () {
+    
+    },
+    playButton () {
+    
+    }
 }
 
 //Functions
-function startButton () {
-    homescreen.style.display = "none"
-    start.style.display = "none"
-    let username = prompt("Please enter your new pet's name")
-    character = new Tamagotchi(username, 0, 0, 0)
-}
-function feedButton () {
 
-}
-function sleepButton () {
-
-}
-function playButton () {
-
-}
 
 //HTML Classes, Tags, IDs
 const homescreen = document.querySelector(".homescreen")
@@ -79,7 +79,7 @@ const boredomNumber = document.querySelector("#boredom-number")
 
 //Event Listeners
 start.addEventListener("click", () => {
-    startButton()
+    game.startButton()
     character.hungerInterval()
     character.sleepinessInterval()
     character.boredomInterval()
