@@ -44,6 +44,7 @@ let game = {
     startButton () {
         homescreen.style.display = "none"
         start.style.display = "none"
+        tips.style.display = "inline"
         nameClass.style.display = "inline"
         stats.style.display = "inline"
         feed.style.display = "inline"
@@ -92,6 +93,7 @@ const rules1 = document.querySelector("#rules1")
 const rules2 = document.querySelector("#rules2")
 const rules3 = document.querySelector("#rules3")
 const rules4 = document.querySelector("#rules4")
+const tips = document.querySelector(".tips")
 const buttons = document.querySelector(".buttons")
 const start = document.querySelector("#start")
 const feed = document.querySelector("#feed")

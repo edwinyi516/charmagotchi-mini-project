@@ -4,6 +4,6 @@
     image-rendering: pixelated;
 }
 
-.name, .stats, #feed, #sleep, #play{
+.name, .stats, .tips, #feed, #sleep, #play{
     display: none
 }
