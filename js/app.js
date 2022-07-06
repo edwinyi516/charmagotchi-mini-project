@@ -13,6 +13,8 @@ class Tamagotchi {
             hungerNumber.innerText = this.hunger
             if(character.hunger >= 10) {
                 clearInterval(interval)
+                allContent.innerHTML = "" //Change to dead and reset screen later
+                alert(`${character.name} died of hunger! Stop eating all the food!`)
             }
         }, 7000)
     }
@@ -22,6 +24,8 @@ class Tamagotchi {
             sleepinessNumber.innerText = this.sleepiness
             if(character.sleepiness >= 10) {
                 clearInterval(interval)
+                allContent.innerHTML = "" //Change to dead and reset screen later
+                alert(`${character.name} died from being too tired! Quit hogging the bed!`)
             }
         }, 12000)
     }
@@ -31,6 +35,8 @@ class Tamagotchi {
             boredomNumber.innerText = this.boredom
             if(character.boredom >= 10) {
                 clearInterval(interval)
+                allContent.innerHTML = "" //Change to dead and reset screen later
+                alert(`${character.name} died of boredom! Get off of your phone and play with your pet!`)
             }
         }, 5000)
     }
@@ -44,12 +50,12 @@ let game = {
     startButton () {
         homescreen.style.display = "none"
         start.style.display = "none"
-        tips.style.display = "inline"
-        nameClass.style.display = "inline"
-        stats.style.display = "inline"
-        feed.style.display = "inline"
-        sleep.style.display = "inline"
-        play.style.display = "inline"
+        tips.style.display = "inline-block"
+        nameClass.style.display = "inline-block"
+        stats.style.display = "inline-block"
+        feed.style.display = "inline-block"
+        sleep.style.display = "inline-block"
+        play.style.display = "inline-block"
         let username = prompt("Please enter your new pet's name")
         character = new Tamagotchi(username, 0, 0, 0)
         nameValue.innerText = username
@@ -87,7 +93,8 @@ let game = {
     }
 }
 
-//HTML Classes, Tags, IDs
+//DOM Elements
+const allContent = document.querySelector("#content")
 const homescreen = document.querySelector(".homescreen")
 const rules1 = document.querySelector("#rules1")
 const rules2 = document.querySelector("#rules2")
