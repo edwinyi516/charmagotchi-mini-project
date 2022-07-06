@@ -14,7 +14,7 @@ class Tamagotchi {
             if(character.hunger >= 10) {
                 clearInterval(interval)
             }
-        }, 1000)
+        }, 7000)
     }
     sleepinessInterval () {
         let interval = setInterval(() => {
@@ -23,7 +23,7 @@ class Tamagotchi {
             if(character.sleepiness >= 10) {
                 clearInterval(interval)
             }
-        }, 1000)
+        }, 12000)
     }
     boredomInterval () {
         let interval = setInterval(() => {
@@ -32,34 +32,59 @@ class Tamagotchi {
             if(character.boredom >= 10) {
                 clearInterval(interval)
             }
-        }, 1000)
+        }, 5000)
     }
 }
 
 //Instantiate Tamagotchi
 let character = new Tamagotchi("", 0, 0, 0)
 
-//Game Object
+//Game Object with Methods
 let game = {
     startButton () {
         homescreen.style.display = "none"
         start.style.display = "none"
+        nameClass.style.display = "inline"
+        stats.style.display = "inline"
+        feed.style.display = "inline"
+        sleep.style.display = "inline"
+        play.style.display = "inline"
         let username = prompt("Please enter your new pet's name")
         character = new Tamagotchi(username, 0, 0, 0)
+        nameValue.innerText = username
     },
     feedButton () {
-    
+        if (character.hunger > 0) {
+            character.hunger -= 1
+            character.sleepiness += 1
+            hungerNumber.innerText = character.hunger
+            sleepinessNumber.innerText = character.sleepiness
+        }
+        else {
+            alert(`${character.name} isn't hungry!`)
+        }
     },
     sleepButton () {
-    
+        if (character.sleepiness > 0) {
+            character.sleepiness -= 1
+            sleepinessNumber.innerText = character.sleepiness
+        }
+        else {
+            alert(`${character.name} isn't sleepy!`)
+        }
     },
     playButton () {
-    
+        if (character.boredom > 0) {
+            character.boredom -= 1
+            character.hunger += 1
+            boredomNumber.innerText = character.boredom
+            hungerNumber.innerText = character.hunger
+        }
+        else {
+            alert(`${character.name} isn't bored!`)
+        }
     }
 }
-
-//Functions
-
 
 //HTML Classes, Tags, IDs
 const homescreen = document.querySelector(".homescreen")
@@ -73,6 +98,8 @@ const feed = document.querySelector("#feed")
 const sleep = document.querySelector("#sleep")
 const play = document.querySelector("#play")
 const stats = document.querySelector(".stats")
+const nameClass = document.querySelector(".name")
+const nameValue = document.querySelector("#name-value")
 const hungerNumber = document.querySelector("#hunger-number")
 const sleepinessNumber = document.querySelector("#sleepiness-number")
 const boredomNumber = document.querySelector("#boredom-number")
@@ -83,4 +110,13 @@ start.addEventListener("click", () => {
     character.hungerInterval()
     character.sleepinessInterval()
     character.boredomInterval()
+})
+feed.addEventListener("click", () => {
+    game.feedButton()
+})
+sleep.addEventListener("click", () => {
+    game.sleepButton()
+})
+play.addEventListener("click", () => {
+    game.playButton()
 })

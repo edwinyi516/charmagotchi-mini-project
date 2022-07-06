@@ -3,3 +3,7 @@
     height: auto;
     image-rendering: pixelated;
 }
+
+.name, .stats, #feed, #sleep, #play{
+    display: none
+}
