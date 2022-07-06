@@ -1,9 +1,38 @@
-.sprite {
-    width: 20%;
-    height: auto;
+body {
+    height: 100vh;
+    background-image: url("../img/day.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bodybg {
+    height: 100vh;
+    background-image: url("../img/night.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+}
+
+.homescreen {
+    text-align: center;
+}
+
+#sprite {
+    display: block;
+    min-height: 20vh;
+    margin: auto;
+    position: fixed;
+    left: 40%;
+    bottom: 6%;
     image-rendering: pixelated;
 }
 
 .name, .stats, .tips, #feed, #sleep, #play{
     display: none
 }
+
