@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    height: 98vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,8 +17,10 @@ body {
     background-repeat: no-repeat;
 }
 
-h1 {
-    text-align: center;
+#title {
+    display: block;
+    margin: auto;
+    padding: 10% 0 20px 0;
 }
 
 .homescreen {
@@ -30,7 +32,7 @@ h1 {
 }
 
 #start {
-    margin: 20px;
+    margin: 30px;
     font-size:20px;
     font-family:Arial;
     width:140px;
