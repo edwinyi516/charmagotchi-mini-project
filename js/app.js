@@ -12,10 +12,10 @@ class Tamagotchi {
         let interval = setInterval(() => {
             this.hunger += 1
             hungerNumber.innerText = this.hunger
-            if(character.hunger >= 10) {
+            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
-                allContent.innerHTML = "" //Change to dead and reset screen later
                 alert(`${character.name} died of hunger! Stop eating all the food!`)
+                location.reload()
             }
         }, 7000)
     }
@@ -23,10 +23,10 @@ class Tamagotchi {
         let interval = setInterval(() => {
             this.sleepiness += 1
             sleepinessNumber.innerText = this.sleepiness
-            if(character.sleepiness >= 10) {
+            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
-                allContent.innerHTML = "" //Change to dead and reset screen later
                 alert(`${character.name} died from being too tired! Quit hogging the bed!`)
+                location.reload()
             }
         }, 12000)
     }
@@ -34,10 +34,10 @@ class Tamagotchi {
         let interval = setInterval(() => {
             this.boredom += 1
             boredomNumber.innerText = this.boredom
-            if(character.boredom >= 10) {
+            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
-                allContent.innerHTML = "" //Change to dead and reset screen later
                 alert(`${character.name} died of boredom! Get off of your phone and play with your pet!`)
+                location.reload()
             }
         }, 5000)
     }
@@ -45,15 +45,17 @@ class Tamagotchi {
         let interval = setInterval(() => {
             this.age += 1
             ageNumber.innerText = this.age
-            if (character.age >= 1 && character.age < 5) {
+            if (character.age === 1) {
+                alert(`Your egg hatched into a Charmander!`)
                 egg.setAttribute("class", "character")
                 charmander.setAttribute("class", "selected-char")
             }
-            else if (character.age >= 5) {
+            else if (character.age === 5) {
+                alert(`${character.name} evolved into a Charizard!`)
                 charmander.setAttribute("class", "character")
                 charizard.setAttribute("class", "selected-char")
             }
-        }, 10000)
+        }, 15000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
@@ -79,6 +81,10 @@ let game = {
         lights.style.display = "flex"
         stats.style.display = "flex"
         let username = prompt("Please enter your new pet's name")
+        while (username === "") {
+            alert(`Your pet needs a name!`)
+            username = prompt("Please enter your new pet's name")
+        }
         character = new Tamagotchi(username, 0, 0, 0, 0)
         nameValue.innerText = username
     },
