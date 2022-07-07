@@ -17,7 +17,7 @@
         <div id="rules4">Take care of your pet so it lives a long and prosperous life. Good luck!</div>
         <button id="start">Start!</button>
     </div>
-    <div class="game">
+    <div class="game-class">
         <div class="tips">
             <div id="tips-word">*Tips:</div>
             <li id="tip1">Feeding your pet reduces hunger by 1, but all the delicious food raises sleepiness by 1.</li>
@@ -28,9 +28,10 @@
             <button id="feed">Feed</button>
             <button id="sleep">Sleep</button>
             <button id="play">Play</button>
+            <button id="wake">Wake</button>
         </div>
         <div class="stats">
-            <h2>Stats</h2>
+            <h2 id="stats-word">Stats</h2>
             <div class="name">
                 <div id="name-word">Name: </div>
                 <div id="name-value"></div>
@@ -47,8 +48,15 @@
                 <div id="boredom-word">Boredom:</div>
                 <div id="boredom-number">0</div>
             </div>
+            <div class="age">
+                <div id="age-word">Age: </div>
+                <div id="age-number">0</div>
+            </div>
+            <br>
         </div>
-        <img src="img/sprite.gif" id="sprite">
+        <img src="img/egg.png" id="egg" class="character">
+        <img src="img/charmander.gif" id="charmander" class="character">
+        <img src="img/charizard.gif" id="charizard" class="character">
     </div>
     </div>
     <script type="text/javascript" src="js/app.js"></script>

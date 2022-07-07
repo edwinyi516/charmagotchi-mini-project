@@ -22,7 +22,19 @@ h1 {
     text-align: center;
 }
 
-#sprite {
+#start {
+    margin: 20px;
+}
+
+.buttons {
+    margin: 20px;
+}
+
+.character {
+    display: none;
+}
+
+.selected-char {
     display: block;
     min-height: 20vh;
     margin: auto;
@@ -32,7 +44,15 @@ h1 {
     image-rendering: pixelated;
 }
 
-.name, .stats, .tips, #feed, #sleep, #play{
-    display: none
+.game-class {
+    display: none;
+    text-align: center;
 }
 
+.stats {
+    display: flex;
+    flex-direction: column;
+    max-width: 50vh;
+    border-style: dashed;
+    border-color: black;
+}
