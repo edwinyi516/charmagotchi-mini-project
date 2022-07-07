@@ -1,12 +1,15 @@
 body {
     height: 100vh;
-    background-image: url("../img/day.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.bodybg {
+.daybg {
+    background-image: url("../img/day.gif");
+}
+
+.nightbg {
     height: 100vh;
     background-image: url("../img/night.gif");
     background-size: cover;
@@ -22,12 +25,30 @@ h1 {
     text-align: center;
 }
 
+.game-class {
+    text-align: center;
+}
+
 #start {
     margin: 20px;
 }
 
-.buttons {
-    margin: 20px;
+.lights-button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#feed, #sleep, #play, #lights {
+    margin: 10px; 
+    display: none;
+    text-align: center;
+    justify-content: center;
 }
 
 .character {
@@ -44,15 +65,14 @@ h1 {
     image-rendering: pixelated;
 }
 
-.game-class {
+.tips {
     display: none;
     text-align: center;
 }
 
 .stats {
-    display: flex;
+    display: none;
+    text-align: center;
+    justify-content: center;
     flex-direction: column;
-    max-width: 50vh;
-    border-style: dashed;
-    border-color: black;
 }

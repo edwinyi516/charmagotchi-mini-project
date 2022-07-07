@@ -45,9 +45,22 @@ class Tamagotchi {
         let interval = setInterval(() => {
             this.age += 1
             ageNumber.innerText = this.age
-        }, 30000)
-        if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+            if (character.age >= 1 && character.age < 5) {
+                egg.setAttribute("class", "character")
+                charmander.setAttribute("class", "selected-char")
+            }
+            else if (character.age >= 5) {
+                charmander.setAttribute("class", "character")
+                charizard.setAttribute("class", "selected-char")
+            }
+        }, 10000)
+        if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
+        }
+    }
+    eggMaker () {
+        if (character.age === 0) {
+            egg.setAttribute("class", "selected-char")
         }
     }
 }
@@ -60,8 +73,11 @@ let game = {
     startButton () {
         homescreen.style.display = "none"
         start.style.display = "none"
-        gameClass.style.display = "block"
-        wake.style.display = "none"
+        tips.style.display = "block"
+        feed.style.display = "flex"
+        play.style.display = "flex"
+        lights.style.display = "flex"
+        stats.style.display = "flex"
         let username = prompt("Please enter your new pet's name")
         character = new Tamagotchi(username, 0, 0, 0, 0)
         nameValue.innerText = username
@@ -96,11 +112,28 @@ let game = {
         else {
             alert(`${character.name} isn't bored!`)
         }
+    },
+    lightsButton () {
+        if (body.getAttribute("class") == "daybg") {
+            body.setAttribute("class", "nightbg")
+            sleep.style.display = "flex"
+            feed.style.display = "none"
+            play.style.display = "none"
+            body.style.color = "white"
+        }
+        else {
+            body.setAttribute("class", "daybg")
+            sleep.style.display = "none"
+            feed.style.display = "flex"
+            play.style.display = "flex"
+            body.style.color = "black"
+        }
     }
 }
 
 
 //DOM Elements
+const body = document.body
 const allContent = document.querySelector("#content")
 const homescreen = document.querySelector(".homescreen")
 const rules1 = document.querySelector("#rules1")
@@ -114,7 +147,7 @@ const start = document.querySelector("#start")
 const feed = document.querySelector("#feed")
 const sleep = document.querySelector("#sleep")
 const play = document.querySelector("#play")
-const wake = document.querySelector("#wake")
+const lights = document.querySelector("#lights")
 const stats = document.querySelector(".stats")
 const nameClass = document.querySelector(".name")
 const nameValue = document.querySelector("#name-value")
@@ -129,6 +162,7 @@ const charizard = document.querySelector("#charizard")
 //Event Listeners
 start.addEventListener("click", () => {
     game.startButton()
+    character.eggMaker()
     character.hungerInterval()
     character.sleepinessInterval()
     character.boredomInterval()
@@ -142,4 +176,7 @@ sleep.addEventListener("click", () => {
 })
 play.addEventListener("click", () => {
     game.playButton()
+})
+lights.addEventListener("click", () => {
+    game.lightsButton()
 })

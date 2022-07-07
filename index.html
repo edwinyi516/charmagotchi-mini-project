@@ -7,14 +7,14 @@
     <title>Tamagotchi</title>
     <link rel="stylesheet" href="css/style.css">    
 </head>
-<body>
+<body class ="daybg">
     <div id="content">
     <h1>Tamagotchi</h1>
     <div class="homescreen">
         <div id="rules1">Welcome to owning a Tamagotchi pet!</div>
         <div id="rules2">Your digital pet has three critical stats: Hunger, Sleepiness, and Boredom.</div>
         <div id="rules3">If any of the stats hit 10, your pet will die a slow and painful death.</div>
-        <div id="rules4">Take care of your pet so it lives a long and prosperous life. Good luck!</div>
+        <div id="rules4">Take care of your pet so it lives a long and happy life. Good luck!</div>
         <button id="start">Start!</button>
     </div>
     <div class="game-class">
@@ -25,10 +25,14 @@
             <li id="tip3">Playing with your pet reduces boredom by 1, but all the fun increases hunger by 1.</li>
         </div>
         <div class="buttons">
-            <button id="feed">Feed</button>
-            <button id="sleep">Sleep</button>
-            <button id="play">Play</button>
-            <button id="wake">Wake</button>
+            <div class="lights-button">
+                <button id="lights">Turn Lights On/Off</button>
+            </div>
+            <div class="action-buttons">
+                <button id="feed">Feed</button>
+                <button id="sleep">Sleep</button>
+                <button id="play">Play</button>
+            </div>
         </div>
         <div class="stats">
             <h2 id="stats-word">Stats</h2>
