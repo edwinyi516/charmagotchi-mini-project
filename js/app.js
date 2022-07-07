@@ -78,10 +78,10 @@ let game = {
         tips.style.display = "block"
         feed.style.display = "flex"
         play.style.display = "flex"
-        lights.style.display = "flex"
+        lights.style.display = "inline-flex"
         stats.style.display = "flex"
         let username = prompt("Please enter your new pet's name")
-        while (username === "") {
+        while (username === "" || username === null) {
             alert(`Your pet needs a name!`)
             username = prompt("Please enter your new pet's name")
         }
