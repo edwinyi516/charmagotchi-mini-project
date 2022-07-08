@@ -74,8 +74,32 @@ class Tamagotchi {
     eggMaker () {
         if (character.level === 0) {
             egg.setAttribute("class", "character-egg")
+            egg.classList.add("current-char")
         }
     }
+    // animateCharmander () {
+    //     let interval = setInterval(() => {
+    //         const directionChooser = Math.round(Math.random())
+    //         let currentLeft = parseInt(charmander.style.left)
+    //         let currentRight = parseInt(charmander.style.right)
+    //         console.log(currentLeft)
+    //         if (directionChooser === 0) { //move left
+    //             newLeft = currentLeft - 5
+    //             newRight = currentRight - 5
+    //             charmander.style.left = `${newLeft}%`
+    //             charmander.style.right = `${newRight}%`
+    //         }
+    //         else { //move right
+    //             newLeft = currentLeft + 5
+    //             newRight = currentRight + 5
+    //             charmander.style.left = `${newLeft}%`
+    //             charmander.style.right = `${newRight}%`
+    //         }
+    //     }, 1000)
+    //     if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+    //         clearInterval(interval)
+    //     }
+    // }
 }
 
 //Instantiate Tamagotchi
@@ -99,8 +123,6 @@ let game = {
         }
         character = new Tamagotchi(username, 0, 0, 0, 0)
         nameValue.innerText = username
-        gameboySound.volume = .3
-        gameboySound.play()
     },
     feedButton () {
         if (character.hunger > 0) {
@@ -199,6 +221,8 @@ start.addEventListener("click", () => {
     character.sleepinessInterval()
     character.boredomInterval()
     character.levelInterval()
+    gameboySound.volume = .3
+    gameboySound.play()
 })
 feed.addEventListener("click", () => {
     game.feedButton()
