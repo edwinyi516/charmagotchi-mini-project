@@ -1,16 +1,26 @@
 body {
     height: 100vh;
+    min-width: 600px;
+    min-height: 1000px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .daybg {
+    height: 100vh;
+    min-width: 600px;
+    min-height: 1000px;
     background-image: url("../img/day.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .nightbg {
     height: 100vh;
+    min-width: 600px;
+    min-height: 1000px;
     background-image: url("../img/night.gif");
     background-size: cover;
     background-position: center;
@@ -21,6 +31,7 @@ body {
     display: block;
     margin: auto;
     padding: 10% 0 20px 0;
+    max-width: 95vw;
 }
 
 .homescreen {
@@ -49,20 +60,16 @@ body {
 
 #start {
     margin: 30px;
-    font-size:20px;
-    font-family:Arial;
-    width:140px;
-    height:50px;
+    font-size: 20px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
     border-width: 1.5px;
-    color:#7d520d;
-    border-color:#7d520d;
-    font-weight:bold;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    text-shadow: 0px 1px 0px #ffffff;
-    background:linear-gradient(#ffec64, #ffab23);
+    color: #7d520d;
+    border-color: #7d520d;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(#ffec64, #ffab23);
 }
 
 #start:hover {
@@ -93,19 +100,16 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    font-size:14px;
-    font-family:Arial;
-    width:120px;
-    height:50px;
-    border-width:1.5px;
-    color:#8a5304;
-    border-color:#a96c15;
-    font-weight:bold;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    background:linear-gradient(#ffc477, #fb9e25);
+    font-size: 14px;
+    font-family: Arial;
+    width: 120px;
+    height: 50px;
+    border-width: 1.5px;
+    color: #8a5304;
+    border-color: #a96c15;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(#ffc477, #fb9e25);
 }
 
 #lights:hover {
@@ -117,19 +121,16 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    font-size:15px;
-    font-family:Arial;
-    width:80px;
-    height:40px;
-    border-width:1.5px;
-    color: #5b6e31;
-    border-color:#83c41a;
-    font-weight:bold;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    background:linear-gradient(#b8e356, #a5cc52);
+    font-size: 15px;
+    font-family: Arial;
+    width: 80px;
+    height: 40px;
+    border-width: 1.5px;
+    color:  #5b6e31;
+    border-color: #83c41a;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(#b8e356, #a5cc52);
 }
 
 #feed:hover {
@@ -141,20 +142,17 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    font-size:15px;
-    font-family:Arial;
-    width:80px;
-    height:40px;
-    border-width:1.5px;
-    color:#245180;
-    border-color:#84bbf3;
-    font-weight:bold;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-    background:linear-gradient(#79bbff, #378de5);
+    font-size: 15px;
+    font-family: Arial;
+    width: 80px;
+    height: 40px;
+    border-width: 1.5px;
+    color: #245180;
+    border-color: #84bbf3;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: linear-gradient(#79bbff, #378de5);
 }
 
 #play:hover {
@@ -166,20 +164,17 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    font-size:15px;
-    font-family:Arial;
-    width:80px;
-    height:40px;
-    border-width:1.5px;
-    color:#777777;
-    border-color:#dcdcdc;
-    font-weight:bold;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(#ededed, #dfdfdf);
+    font-size: 15px;
+    font-family: Arial;
+    width: 80px;
+    height: 40px;
+    border-width: 1.5px;
+    color: #777777;
+    border-color: #dcdcdc;
+    font-weight: bold;
+    border-radius: 15px;;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: linear-gradient(#ededed, #dfdfdf);
   }
   
 #sleep:hover {
@@ -194,7 +189,7 @@ body {
     display: block;
     min-height: 15vh;
     margin: auto;
-    position: fixed;
+    position: absolute;
     left: 40%;
     bottom: 5%;
     image-rendering: pixelated;
@@ -204,7 +199,7 @@ body {
     display: block;
     min-height: 20vh;
     margin: auto;
-    position: fixed;
+    position: absolute;
     left: 40%;
     bottom: 5%;
     image-rendering: pixelated;
@@ -214,7 +209,7 @@ body {
     display: block;
     min-height: 25vh;
     margin: auto;
-    position: fixed;
+    position: absolute;
     left: 40%;
     bottom: 5%;
     image-rendering: pixelated;
@@ -224,7 +219,7 @@ body {
     display: block;
     min-height: 40vh;
     margin: auto;
-    position: fixed;
+    position: absolute;
     left: 40%;
     bottom: 5%;
     image-rendering: pixelated;
@@ -276,7 +271,19 @@ body {
     width: 100vw;
     justify-content: space-between;
     flex-direction: row;
+    flex-wrap: wrap;
     font-family: "Press Start 2P";
-    font-size: 18px;
+    font-size: 16px;
     line-height: 35px;
+}
+
+#name-word, #level-word, #hunger-word, #sleepiness-word, #boredom-word {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+@media (min-width:1280px) {
+    .stats {
+        max-width: 1280px;
+    }
 }

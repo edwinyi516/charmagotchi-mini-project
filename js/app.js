@@ -1,11 +1,11 @@
 //Tamagotchi Class
 class Tamagotchi {
-    constructor(name, hunger, sleepiness, boredom, age) {
+    constructor(name, hunger, sleepiness, boredom, level) {
         this.name = name
         this.hunger = hunger
         this.sleepiness = sleepiness
         this.boredom = boredom
-        this.age = age
+        this.level = level
     }
     //Stats Intervals
     hungerInterval () {
@@ -28,7 +28,7 @@ class Tamagotchi {
                 alert(`${character.name} died from being too tired! Quit hogging the bed!`)
                 location.reload()
             }
-        }, 12000)
+        }, 10000)
     }
     boredomInterval () {
         let interval = setInterval(() => {
@@ -39,27 +39,27 @@ class Tamagotchi {
                 alert(`${character.name} died of boredom! Get off of your phone and play with your pet!`)
                 location.reload()
             }
-        }, 5000)
+        }, 8000)
     }
-    ageInterval () {
+    levelInterval () {
         let interval = setInterval(() => {
-            this.age += 1
-            ageNumber.innerText = this.age
-            if (character.age === 1) {
+            this.level += 1
+            levelNumber.innerText = this.level
+            if (character.level === 1) {
                 alert(`Your egg hatched into a Charmander!`)
                 egg.setAttribute("class", "character-hidden")
                 charmander.setAttribute("class", "character-charmander")
                 charmanderSound.volume = .1
                 charmanderSound.play()
             }
-            else if (character.age === 16) {
+            else if (character.level === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
                 charmander.setAttribute("class", "character-hidden")
                 charmeleon.setAttribute("class", "character-charmeleon")
                 charmeleonSound.volume = .1
                 charmeleonSound.play()
             }
-            else if (character.age === 36) {
+            else if (character.level === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
                 charmeleon.setAttribute("class", "character-hidden")
                 charizard.setAttribute("class", "character-charizard")
@@ -72,7 +72,7 @@ class Tamagotchi {
         }
     }
     eggMaker () {
-        if (character.age === 0) {
+        if (character.level === 0) {
             egg.setAttribute("class", "character-egg")
         }
     }
@@ -175,7 +175,7 @@ const nameValue = document.querySelector("#name-value")
 const hungerNumber = document.querySelector("#hunger-number")
 const sleepinessNumber = document.querySelector("#sleepiness-number")
 const boredomNumber = document.querySelector("#boredom-number")
-const ageNumber = document.querySelector("#age-number")
+const levelNumber = document.querySelector("#level-number")
 const egg = document.querySelector("#egg")
 const charmander = document.querySelector("#charmander")
 const charmeleon = document.querySelector("#charmeleon")
@@ -191,7 +191,7 @@ start.addEventListener("click", () => {
     character.hungerInterval()
     character.sleepinessInterval()
     character.boredomInterval()
-    character.ageInterval()
+    character.levelInterval()
 })
 feed.addEventListener("click", () => {
     game.feedButton()
