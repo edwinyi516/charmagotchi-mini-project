@@ -49,21 +49,21 @@ class Tamagotchi {
                 alert(`Your egg hatched into a Charmander!`)
                 egg.setAttribute("class", "character-hidden")
                 charmander.setAttribute("class", "character-charmander")
-                charmanderSound.volume = .1
+                charmanderSound.volume = .2
                 charmanderSound.play()
             }
             else if (character.level === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
                 charmander.setAttribute("class", "character-hidden")
                 charmeleon.setAttribute("class", "character-charmeleon")
-                charmeleonSound.volume = .1
+                charmeleonSound.volume = .2
                 charmeleonSound.play()
             }
             else if (character.level === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
                 charmeleon.setAttribute("class", "character-hidden")
                 charizard.setAttribute("class", "character-charizard")
-                charizardSound.volume = .1
+                charizardSound.volume = .2
                 charizardSound.play()
             }
         }, 5000)
@@ -99,6 +99,8 @@ let game = {
         }
         character = new Tamagotchi(username, 0, 0, 0, 0)
         nameValue.innerText = username
+        gameboySound.volume = .3
+        gameboySound.play()
     },
     feedButton () {
         if (character.hunger > 0) {
@@ -139,6 +141,7 @@ let game = {
             feed.style.display = "none"
             play.style.display = "none"
             body.style.color = "white"
+            owlSound.play()
         }
         else {
             body.setAttribute("class", "daybg")
@@ -147,6 +150,7 @@ let game = {
             feed.style.display = "flex"
             play.style.display = "flex"
             body.style.color = "black"
+            birdSound.play()
         }
     }
 }
@@ -183,6 +187,9 @@ const charizard = document.querySelector("#charizard")
 const charmanderSound = new Audio("sounds/charmander-sound.ogg")
 const charmeleonSound = new Audio("sounds/charmeleon-sound.ogg")
 const charizardSound = new Audio("sounds/charizard-sound.ogg")
+const owlSound = new Audio("sounds/owl.mp3")
+const birdSound = new Audio("sounds/birds.mp3")
+const gameboySound = new Audio("sounds/gameboy-sound.mp3")
 
 //Event Listeners
 start.addEventListener("click", () => {
