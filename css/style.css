@@ -27,7 +27,7 @@ body {
 #title {
     display: block;
     margin: auto;
-    padding: 10% 0 20px 0;
+    padding: 5% 0 20px 0;
     max-width: 95vw;
 }
 
@@ -48,7 +48,7 @@ body {
     letter-spacing: .8px;
     font-size: 18px;
     line-height: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .game-class {
@@ -77,13 +77,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin:;
 }
 
 .action-buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #feed, #sleep, #play {
@@ -178,12 +178,19 @@ body {
     background: linear-gradient(#dfdfdf, #ededed);
 }
 
-.character-hidden {
+#egg {
     display: none;
+    min-height: 12vh;
+    margin: auto;
+    left: 40%;
+    right: 40%;
+    bottom: 5%;
+    position: absolute;
+    image-rendering: pixelated;
 }
 
-.character-egg {
-    display: block;
+#charmander {
+    display: none;
     min-height: 15vh;
     margin: auto;
     left: 40%;
@@ -193,21 +200,10 @@ body {
     image-rendering: pixelated;
 }
 
-.character-charmander {
-    display: block;
+#charmeleon {
+    display: none;
     min-height: 20vh;
     margin: auto;
-    left: 40%;
-    right: 40%;
-    bottom: 5%;
-    position: absolute;
-    image-rendering: pixelated;
-}
-
-.character-charmeleon {
-    display: block;
-    min-height: 25vh;
-    margin: auto;
     position: absolute;
     left: 40%;
     right: 40%;
@@ -215,9 +211,9 @@ body {
     image-rendering: pixelated;
 }
 
-.character-charizard {
-    display: block;
-    min-height: 40vh;
+#charizard {
+    display: none;
+    min-height: 30vh;
     margin: auto;
     position: absolute;
     left: 40%;
@@ -285,14 +281,14 @@ body {
 }
 
 @media (min-width: 1280px) {
-    .stats {
+    .stats, .stats-night {
         max-width: 1280px;
     }
 }
 
 @media (max-height: 1000px) {
-    .character-egg {
-        display: block;
+    #egg {
+        display: none;
         min-height: 15vh;
         margin: auto;
         left: 0;
@@ -302,8 +298,8 @@ body {
         image-rendering: pixelated;
     }
     
-    .character-charmander {
-        display: block;
+    #charmander {
+        display: none;
         min-height: 20vh;
         margin: auto;
         left: 0;
@@ -313,24 +309,24 @@ body {
         image-rendering: pixelated;
     }
     
-    .character-charmeleon {
-        display: block;
+    #charmeleon {
+        display: none;
         min-height: 25vh;
         margin: auto;
-        position: absolute;
-        left: 40vw;
-        right: 40vw;
+        position: relative;
+        left: 0;
+        right: 0;
         bottom: 5%;
         image-rendering: pixelated;
     }
     
-    .character-charizard {
-        display: block;
+    #charizard {
+        display: none;
         min-height: 40vh;
         margin: auto;
-        position: absolute;
-        left: 40vw;
-        right: 40vw;
+        position: relative;
+        left: 0;
+        right: 0;
         bottom: 5%;
         image-rendering: pixelated;
     }

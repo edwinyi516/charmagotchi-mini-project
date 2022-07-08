@@ -47,60 +47,36 @@ class Tamagotchi {
             levelNumber.innerText = this.level
             if (character.level === 1) {
                 alert(`Your egg hatched into a Charmander!`)
-                egg.setAttribute("class", "character-hidden")
-                charmander.setAttribute("class", "character-charmander")
+                egg.style.display = "none"
+                charmander.style.display = "block"
                 charmanderSound.volume = .2
                 charmanderSound.play()
             }
             else if (character.level === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
-                charmander.setAttribute("class", "character-hidden")
-                charmeleon.setAttribute("class", "character-charmeleon")
+                charmander.style.display = "none"
+                charmeleon.style.display = "block"
                 charmeleonSound.volume = .2
                 charmeleonSound.play()
             }
             else if (character.level === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
-                charmeleon.setAttribute("class", "character-hidden")
-                charizard.setAttribute("class", "character-charizard")
+                charmeleon.style.display = "none"
+                charizard.style.display = "block"
                 charizardSound.volume = .2
                 charizardSound.play()
             }
-        }, 5000)
+        }, 1000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
     }
     eggMaker () {
         if (character.level === 0) {
-            egg.setAttribute("class", "character-egg")
-            egg.classList.add("current-char")
+            egg.style.display = "block"
         }
     }
-    // animateCharmander () {
-    //     let interval = setInterval(() => {
-    //         const directionChooser = Math.round(Math.random())
-    //         let currentLeft = parseInt(charmander.style.left)
-    //         let currentRight = parseInt(charmander.style.right)
-    //         console.log(currentLeft)
-    //         if (directionChooser === 0) { //move left
-    //             newLeft = currentLeft - 5
-    //             newRight = currentRight - 5
-    //             charmander.style.left = `${newLeft}%`
-    //             charmander.style.right = `${newRight}%`
-    //         }
-    //         else { //move right
-    //             newLeft = currentLeft + 5
-    //             newRight = currentRight + 5
-    //             charmander.style.left = `${newLeft}%`
-    //             charmander.style.right = `${newRight}%`
-    //         }
-    //     }, 1000)
-    //     if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
-    //         clearInterval(interval)
-    //     }
-    // }
-}
+    }
 
 //Instantiate Tamagotchi
 let character = new Tamagotchi("", 0, 0, 0, 0)
@@ -236,3 +212,26 @@ play.addEventListener("click", () => {
 lights.addEventListener("click", () => {
     game.lightsButton()
 })
+
+    // animateCharmander () {
+    //     let interval = setInterval(() => {
+    //         const directionChooser = Math.round(Math.random())
+    //         let currentLeft = parseInt(charmander.style.left)
+    //         let currentRight = parseInt(charmander.style.right)
+    //         console.log(currentLeft)
+    //         if (directionChooser === 0) { //move left
+    //             newLeft = currentLeft - 5
+    //             newRight = currentRight - 5
+    //             charmander.style.left = `${newLeft}%`
+    //             charmander.style.right = `${newRight}%`
+    //         }
+    //         else { //move right
+    //             newLeft = currentLeft + 5
+    //             newRight = currentRight + 5
+    //             charmander.style.left = `${newLeft}%`
+    //             charmander.style.right = `${newRight}%`
+    //         }
+    //     }, 1000)
+    //     if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+    //         clearInterval(interval)
+    //     }
