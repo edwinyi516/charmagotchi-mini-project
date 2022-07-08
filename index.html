@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charmagotchi</title>
+    <div class="fonts">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+    </div>
     <link rel="stylesheet" href="css/style.css">    
 </head>
 <body class ="daybg">
@@ -19,7 +24,7 @@
     </div>
     <div class="game-class">
         <div class="tips">
-            <div id="tips-word">*Tips:</div>
+            <div id="tips-word">TIPS:</div>
             <li id="tip1">Feeding your pet reduces hunger by 1, but all the delicious food raises sleepiness by 1.</li>
             <li id="tip2">Sleeping reduces sleepiness (go figure) by 1. Other stats are unaffected while unconscious.</li>
             <li id="tip3">Playing with your pet reduces boredom by 1, but all the fun increases hunger by 1.</li>
@@ -36,32 +41,34 @@
         </div>
         <div class="stats">
             <h2 id="stats-word">Stats</h2>
-            <div class="name">
-                <div id="name-word">Name: </div>
-                <div id="name-value"></div>
-            </div>
-            <div class="hunger">
-                <div id="hunger-word">Hunger:</div>
-                <div id="hunger-number">0</div>
-            </div>
-            <div class="sleepiness">
-                <div id="sleepiness-word">Sleepiness:</div>
-                <div id="sleepiness-number">0</div>
-            </div>
-            <div class="boredom">
-                <div id="boredom-word">Boredom:</div>
-                <div id="boredom-number">0</div>
-            </div>
-            <div class="age">
-                <div id="age-word">Age: </div>
-                <div id="age-number">0</div>
+            <div class="stats-data">
+                <div class="name">
+                    <div id="name-word">Name</div>
+                    <div id="name-value"></div>
+                </div>
+                <div class="hunger">
+                    <div id="hunger-word">Hunger</div>
+                    <div id="hunger-number">0</div>
+                </div>
+                <div class="sleepiness">
+                    <div id="sleepiness-word">Sleepiness</div>
+                    <div id="sleepiness-number">0</div>
+                </div>
+                <div class="boredom">
+                    <div id="boredom-word">Boredom</div>
+                    <div id="boredom-number">0</div>
+                </div>
+                <div class="age">
+                    <div id="age-word">Age</div>
+                    <div id="age-number">0</div>
+                </div>
             </div>
             <br>
         </div>
-        <img src="img/egg.png" id="egg" class="character">
-        <img src="img/charmander.gif" id="charmander" class="character">
-        <img src="img/charmeleon.gif" id="charmeleon" class="character">
-        <img src="img/charizard.gif" id="charizard" class="character">
+        <img src="img/egg.png" id="egg" class="character-hidden">
+        <img src="img/charmander.gif" id="charmander" class="character-hidden">
+        <img src="img/charmeleon.gif" id="charmeleon" class="character-hidden">
+        <img src="img/charizard.gif" id="charizard" class="character-hidden">
     </div>
     </div>
     <script type="text/javascript" src="js/app.js"></script>

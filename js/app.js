@@ -47,33 +47,33 @@ class Tamagotchi {
             ageNumber.innerText = this.age
             if (character.age === 1) {
                 alert(`Your egg hatched into a Charmander!`)
-                egg.setAttribute("class", "character")
-                charmander.setAttribute("class", "selected-charmander")
+                egg.setAttribute("class", "character-hidden")
+                charmander.setAttribute("class", "character-charmander")
                 charmanderSound.volume = .1
                 charmanderSound.play()
             }
             else if (character.age === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
-                charmander.setAttribute("class", "character")
-                charmeleon.setAttribute("class", "selected-charmeleon")
+                charmander.setAttribute("class", "character-hidden")
+                charmeleon.setAttribute("class", "character-charmeleon")
                 charmeleonSound.volume = .1
                 charmeleonSound.play()
             }
             else if (character.age === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
-                charmeleon.setAttribute("class", "character")
-                charizard.setAttribute("class", "selected-charizard")
+                charmeleon.setAttribute("class", "character-hidden")
+                charizard.setAttribute("class", "character-charizard")
                 charizardSound.volume = .1
                 charizardSound.play()
             }
-        }, 1000)
+        }, 5000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
     }
     eggMaker () {
         if (character.age === 0) {
-            egg.setAttribute("class", "selected-egg")
+            egg.setAttribute("class", "character-egg")
         }
     }
 }
@@ -91,6 +91,7 @@ let game = {
         play.style.display = "flex"
         lights.style.display = "inline-flex"
         stats.style.display = "flex"
+        statsData.style.display = "flex"
         let username = prompt("Please enter your new pet's name")
         while (username === "" || username === null) {
             alert(`Your pet needs a name!`)
@@ -133,6 +134,7 @@ let game = {
     lightsButton () {
         if (body.getAttribute("class") == "daybg") {
             body.setAttribute("class", "nightbg")
+            stats.setAttribute("class", "stats-night")
             sleep.style.display = "flex"
             feed.style.display = "none"
             play.style.display = "none"
@@ -140,6 +142,7 @@ let game = {
         }
         else {
             body.setAttribute("class", "daybg")
+            stats.setAttribute("class", "stats")
             sleep.style.display = "none"
             feed.style.display = "flex"
             play.style.display = "flex"
@@ -166,6 +169,7 @@ const sleep = document.querySelector("#sleep")
 const play = document.querySelector("#play")
 const lights = document.querySelector("#lights")
 const stats = document.querySelector(".stats")
+const statsData = document.querySelector(".stats-data")
 const nameClass = document.querySelector(".name")
 const nameValue = document.querySelector("#name-value")
 const hungerNumber = document.querySelector("#hunger-number")
