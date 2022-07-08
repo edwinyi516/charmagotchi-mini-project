@@ -48,32 +48,32 @@ class Tamagotchi {
             if (character.age === 1) {
                 alert(`Your egg hatched into a Charmander!`)
                 egg.setAttribute("class", "character")
-                charmander.setAttribute("class", "selected-char")
+                charmander.setAttribute("class", "selected-charmander")
                 charmanderSound.volume = .1
                 charmanderSound.play()
             }
             else if (character.age === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
                 charmander.setAttribute("class", "character")
-                charmeleon.setAttribute("class", "selected-char")
+                charmeleon.setAttribute("class", "selected-charmeleon")
                 charmeleonSound.volume = .1
                 charmeleonSound.play()
             }
             else if (character.age === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
-                charmander.setAttribute("class", "character")
-                charizard.setAttribute("class", "selected-char")
+                charmeleon.setAttribute("class", "character")
+                charizard.setAttribute("class", "selected-charizard")
                 charizardSound.volume = .1
                 charizardSound.play()
             }
-        }, 10000)
+        }, 1000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
     }
     eggMaker () {
         if (character.age === 0) {
-            egg.setAttribute("class", "selected-char")
+            egg.setAttribute("class", "selected-egg")
         }
     }
 }
@@ -174,7 +174,7 @@ const boredomNumber = document.querySelector("#boredom-number")
 const ageNumber = document.querySelector("#age-number")
 const egg = document.querySelector("#egg")
 const charmander = document.querySelector("#charmander")
-const charmeleon = document.querySelector("charmeleon")
+const charmeleon = document.querySelector("#charmeleon")
 const charizard = document.querySelector("#charizard")
 const charmanderSound = new Audio("sounds/charmander-sound.ogg")
 const charmeleonSound = new Audio("sounds/charmeleon-sound.ogg")

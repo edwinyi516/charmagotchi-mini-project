@@ -173,9 +173,39 @@ body {
     display: none;
 }
 
-.selected-char {
+.selected-egg {
+    display: block;
+    min-height: 15vh;
+    margin: auto;
+    position: fixed;
+    left: 40%;
+    bottom: 5%;
+    image-rendering: pixelated;
+}
+
+.selected-charmander {
     display: block;
     min-height: 20vh;
+    margin: auto;
+    position: fixed;
+    left: 40%;
+    bottom: 5%;
+    image-rendering: pixelated;
+}
+
+.selected-charmeleon {
+    display: block;
+    min-height: 25vh;
+    margin: auto;
+    position: fixed;
+    left: 40%;
+    bottom: 5%;
+    image-rendering: pixelated;
+}
+
+.selected-charizard {
+    display: block;
+    min-height: 40vh;
     margin: auto;
     position: fixed;
     left: 40%;
