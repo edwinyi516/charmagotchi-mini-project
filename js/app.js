@@ -49,13 +49,24 @@ class Tamagotchi {
                 alert(`Your egg hatched into a Charmander!`)
                 egg.setAttribute("class", "character")
                 charmander.setAttribute("class", "selected-char")
+                charmanderSound.volume = .1
+                charmanderSound.play()
             }
-            else if (character.age === 5) {
+            else if (character.age === 16) {
+                alert(`${character.name} evolved into a Charmeleon!`)
+                charmander.setAttribute("class", "character")
+                charmeleon.setAttribute("class", "selected-char")
+                charmeleonSound.volume = .1
+                charmeleonSound.play()
+            }
+            else if (character.age === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
                 charmander.setAttribute("class", "character")
                 charizard.setAttribute("class", "selected-char")
+                charizardSound.volume = .1
+                charizardSound.play()
             }
-        }, 15000)
+        }, 10000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
@@ -163,7 +174,11 @@ const boredomNumber = document.querySelector("#boredom-number")
 const ageNumber = document.querySelector("#age-number")
 const egg = document.querySelector("#egg")
 const charmander = document.querySelector("#charmander")
+const charmeleon = document.querySelector("charmeleon")
 const charizard = document.querySelector("#charizard")
+const charmanderSound = new Audio("sounds/charmander-sound.ogg")
+const charmeleonSound = new Audio("sounds/charmeleon-sound.ogg")
+const charizardSound = new Audio("sounds/charizard-sound.ogg")
 
 //Event Listeners
 start.addEventListener("click", () => {
