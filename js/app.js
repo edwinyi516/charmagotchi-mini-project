@@ -66,7 +66,7 @@ class Tamagotchi {
                 charizardSound.volume = .2
                 charizardSound.play()
             }
-        }, 1000)
+        }, 5000)
         if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
             clearInterval(interval)
         }
@@ -139,7 +139,12 @@ let game = {
             feed.style.display = "none"
             play.style.display = "none"
             body.style.color = "white"
+            daybgm.pause()
+            daybgm.currentTime = 0
             owlSound.play()
+            setTimeout(() => {
+                nightbgm.play().loop = true
+            },1000)
         }
         else {
             body.setAttribute("class", "daybg")
@@ -148,7 +153,12 @@ let game = {
             feed.style.display = "flex"
             play.style.display = "flex"
             body.style.color = "black"
+            nightbgm.pause()
+            nightbgm.currentTime = 0
             birdSound.play()
+            setTimeout(() => {
+                daybgm.play().loop = true
+            },1000)
         }
     }
 }
@@ -188,6 +198,8 @@ const charizardSound = new Audio("sounds/charizard-sound.ogg")
 const owlSound = new Audio("sounds/owl.mp3")
 const birdSound = new Audio("sounds/birds.mp3")
 const gameboySound = new Audio("sounds/gameboy-sound.mp3")
+const daybgm = new Audio("https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ilqgmmwzfl/13%20Route%201.mp3")
+const nightbgm = new Audio("https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/lnoaxnzruq/04%20Pallet%20Town.mp3")
 
 //Event Listeners
 start.addEventListener("click", () => {
@@ -199,6 +211,11 @@ start.addEventListener("click", () => {
     character.levelInterval()
     gameboySound.volume = .3
     gameboySound.play()
+    daybgm.volume = .2
+    nightbgm.volume = .1
+    setTimeout(() => {
+        daybgm.play().loop = true
+    },1000)
 })
 feed.addEventListener("click", () => {
     game.feedButton()
@@ -212,26 +229,3 @@ play.addEventListener("click", () => {
 lights.addEventListener("click", () => {
     game.lightsButton()
 })
-
-    // animateCharmander () {
-    //     let interval = setInterval(() => {
-    //         const directionChooser = Math.round(Math.random())
-    //         let currentLeft = parseInt(charmander.style.left)
-    //         let currentRight = parseInt(charmander.style.right)
-    //         console.log(currentLeft)
-    //         if (directionChooser === 0) { //move left
-    //             newLeft = currentLeft - 5
-    //             newRight = currentRight - 5
-    //             charmander.style.left = `${newLeft}%`
-    //             charmander.style.right = `${newRight}%`
-    //         }
-    //         else { //move right
-    //             newLeft = currentLeft + 5
-    //             newRight = currentRight + 5
-    //             charmander.style.left = `${newLeft}%`
-    //             charmander.style.right = `${newRight}%`
-    //         }
-    //     }, 1000)
-    //     if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
-    //         clearInterval(interval)
-    //     }
