@@ -1,6 +1,7 @@
 # "Charmagotchi" Mini Project
 
-![Preview](/img/preview.png)
+![Day Preview](/img/day-preview.png)
+![Night Preview](/img/night-preview.png)
 
 ## Description
 <div>
