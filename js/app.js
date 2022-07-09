@@ -75,7 +75,7 @@ class Tamagotchi {
                 charizard.style.display = "block"
                 charizardSound.play()
             }
-        }, 5000)
+        }, 2000)
     }
     eggMaker () {
         if (character.level === 0) {
