@@ -10,39 +10,51 @@ class Tamagotchi {
     //Stats Intervals
     hungerInterval () {
         let interval = setInterval(() => {
-            this.hunger += 1
-            hungerNumber.innerText = this.hunger
-            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+            if(character.hunger >=10) {
                 clearInterval(interval)
                 alert(`${character.name} died of hunger! Stop eating all the food!`)
                 location.reload()
             }
+            else if (character.sleepiness >= 10 || character.boredom >= 10) {
+                clearInterval(interval)
+            }
+            this.hunger += 1
+            hungerNumber.innerText = this.hunger
         }, 7000)
     }
     sleepinessInterval () {
         let interval = setInterval(() => {
-            this.sleepiness += 1
-            sleepinessNumber.innerText = this.sleepiness
-            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+            if(character.sleepiness >= 10) {
                 clearInterval(interval)
                 alert(`${character.name} died from being too tired! Quit hogging the bed!`)
                 location.reload()
             }
+            else if (character.hunger >= 10 || character.boredom >= 10) {
+                clearInterval(interval)
+            }
+            this.sleepiness += 1
+            sleepinessNumber.innerText = this.sleepiness
         }, 10000)
     }
     boredomInterval () {
         let interval = setInterval(() => {
-            this.boredom += 1
-            boredomNumber.innerText = this.boredom
-            if(character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+            if(character.boredom >= 10) {
                 clearInterval(interval)
                 alert(`${character.name} died of boredom! Get off of your phone and play with your pet!`)
                 location.reload()
             }
+            else if (character.hunger >=10 || character.sleepiness >= 10) {
+                clearInterval(interval)
+            }
+            this.boredom += 1
+            boredomNumber.innerText = this.boredom
         }, 8000)
     }
     levelInterval () {
         let interval = setInterval(() => {
+            if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
+                clearInterval(interval)
+            }
             this.level += 1
             levelNumber.innerText = this.level
             if (character.level === 1) {
@@ -64,9 +76,6 @@ class Tamagotchi {
                 charizardSound.play()
             }
         }, 5000)
-        if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
-            clearInterval(interval)
-        }
     }
     eggMaker () {
         if (character.level === 0) {
@@ -166,7 +175,7 @@ let game = {
             daybgm.currentTime = 0
             owlSound.play()
             setTimeout(() => {
-                nightbgm.play().loop = true
+                nightbgm.play()
             },1000)
         }
         else {
@@ -180,7 +189,7 @@ let game = {
             nightbgm.currentTime = 0
             birdSound.play()
             setTimeout(() => {
-                daybgm.play().loop = true
+                daybgm.play()
             },1000)
         }
     }
@@ -225,6 +234,8 @@ const birdSound = new Audio("sounds/birds.mp3")
 const gameboySound = new Audio("sounds/gameboy-sound.mp3")
 const daybgm = new Audio("https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ilqgmmwzfl/13%20Route%201.mp3")
 const nightbgm = new Audio("https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/lnoaxnzruq/04%20Pallet%20Town.mp3")
+daybgm.loop = true
+nightbgm.loop = true
 
 //Event Listeners
 start.addEventListener("click", () => {
@@ -256,7 +267,7 @@ start.addEventListener("click", () => {
     }
     gameboySound.play()
     setTimeout(() => {
-        daybgm.play().loop = true
+        daybgm.play()
     },1000)
 })
 audioOn.addEventListener("click", () => {

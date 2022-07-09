@@ -26,7 +26,7 @@ body {
 
 .audio-selected {
     display: normal;
-    position: absolute;
+    position:absolute;
     top: 15px;
     right: 20px;
     max-height: 75px;
@@ -34,10 +34,6 @@ body {
 
 .audio-not-selected {
     display: none;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    max-height: 75px;
 }
 
 #title {
@@ -224,7 +220,7 @@ body {
     bottom: 1%;
     position: absolute;
     image-rendering: pixelated;
-    animation: movementRight 16s linear infinite;
+    animation: movement 16s linear infinite;
 }
 
 #charmeleon {
@@ -236,7 +232,7 @@ body {
     right: 40%;
     bottom: 5%;
     image-rendering: pixelated;
-    animation: movementRight 16s linear infinite;
+    animation: movement 16s linear infinite;
 }
 
 #charizard {
@@ -248,7 +244,7 @@ body {
     right: 40%;
     bottom: 5%;
     image-rendering: pixelated;
-    animation: movementRight 16s linear infinite;
+    animation: movement 16s linear infinite;
 }
 
 .stats {
@@ -300,12 +296,12 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     font-family: "Press Start 2P";
-    font-size: 16px;
+    font-size: 17px;
     line-height: 35px;
 }
 
 #name-word, #level-word, #hunger-word, #sleepiness-word, #boredom-word {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -327,7 +323,7 @@ body {
     }
 }
 
-@keyframes movementRight {
+@keyframes movement {
     0% {
         -webkit-transform: translate(0px);
     }
