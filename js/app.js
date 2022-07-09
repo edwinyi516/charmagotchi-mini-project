@@ -198,15 +198,8 @@ let game = {
 
 //DOM Elements
 const body = document.body
-const allContent = document.querySelector("#content")
 const homescreen = document.querySelector(".homescreen")
-const rules1 = document.querySelector("#rules1")
-const rules2 = document.querySelector("#rules2")
-const rules3 = document.querySelector("#rules3")
-const rules4 = document.querySelector("#rules4")
-const gameClass = document.querySelector(".game-class")
 const tips = document.querySelector(".tips")
-const buttons = document.querySelector(".buttons")
 const start = document.querySelector("#start")
 const feed = document.querySelector("#feed")
 const sleep = document.querySelector("#sleep")
@@ -214,7 +207,6 @@ const play = document.querySelector("#play")
 const lights = document.querySelector("#lights")
 const stats = document.querySelector(".stats")
 const statsData = document.querySelector(".stats-data")
-const nameClass = document.querySelector(".name")
 const nameValue = document.querySelector("#name-value")
 const hungerNumber = document.querySelector("#hunger-number")
 const sleepinessNumber = document.querySelector("#sleepiness-number")

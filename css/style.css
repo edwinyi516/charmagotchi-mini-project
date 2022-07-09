@@ -217,7 +217,7 @@ body {
     margin: auto;
     left: 40%;
     right: 40%;
-    bottom: 1%;
+    bottom: 5%;
     position: absolute;
     image-rendering: pixelated;
     animation: movement 16s linear infinite;
@@ -352,7 +352,7 @@ body {
 @media (max-height: 1000px) {
     #egg {
         display: none;
-        min-height: 15vh;
+        min-height: 12vh;
         margin: auto;
         left: 0;
         right: 0;
@@ -363,7 +363,7 @@ body {
     
     #charmander {
         display: none;
-        min-height: 20vh;
+        min-height: 15vh;
         margin: auto;
         left: 0;
         right: 0;
@@ -374,7 +374,7 @@ body {
     
     #charmeleon {
         display: none;
-        min-height: 25vh;
+        min-height: 20vh;
         margin: auto;
         position: relative;
         left: 0;
@@ -385,7 +385,7 @@ body {
     
     #charizard {
         display: none;
-        min-height: 40vh;
+        min-height: 30vh;
         margin: auto;
         position: relative;
         left: 0;
