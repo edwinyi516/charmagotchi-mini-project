@@ -9,52 +9,67 @@ class Tamagotchi {
     }
     //Stats Intervals
     hungerInterval () {
-        let interval = setInterval(() => {
+        let intervalCheck = setInterval(() => {
             if(character.hunger >=10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
                 alert(`${character.name} died of hunger! Stop eating all the food!`)
                 location.reload()
             }
             else if (character.sleepiness >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
             }
+        }, 1000)
+        let interval = setInterval(() => {
             this.hunger += 1
             hungerNumber.innerText = this.hunger
         }, 7000)
     }
     sleepinessInterval () {
-        let interval = setInterval(() => {
+        let intervalCheck = setInterval(() => {
             if(character.sleepiness >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
                 alert(`${character.name} died from being too tired! Quit hogging the bed!`)
                 location.reload()
             }
             else if (character.hunger >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
             }
+        }, 1000)
+        let interval = setInterval(() => {
             this.sleepiness += 1
             sleepinessNumber.innerText = this.sleepiness
         }, 10000)
     }
     boredomInterval () {
-        let interval = setInterval(() => {
+        let intervalCheck = setInterval(() => {
             if(character.boredom >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
                 alert(`${character.name} died of boredom! Get off of your phone and play with your pet!`)
                 location.reload()
             }
             else if (character.hunger >=10 || character.sleepiness >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
             }
+        },1000)
+        let interval = setInterval(() => {
             this.boredom += 1
             boredomNumber.innerText = this.boredom
         }, 8000)
     }
     levelInterval () {
-        let interval = setInterval(() => {
+        let intervalCheck = setInterval(() => {
             if (character.hunger >=10 || character.sleepiness >= 10 || character.boredom >= 10) {
                 clearInterval(interval)
+                clearInterval(intervalCheck)
             }
+        }, 1000)
+        let interval = setInterval(() => {
             this.level += 1
             levelNumber.innerText = this.level
             if (character.level === 1) {
@@ -283,4 +298,13 @@ lights.addEventListener("click", () => {
     setTimeout(() => {
         lights.disabled = false
     },1001)
+})
+charmander.addEventListener("click", () => {
+    charmanderSound.play()
+})
+charmeleon.addEventListener("click", () => {
+    charmeleonSound.play()
+})
+charizard.addEventListener("click", () => {
+    charizardSound.play()
 })
