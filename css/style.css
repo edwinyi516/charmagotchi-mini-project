@@ -24,6 +24,22 @@ body {
     background-repeat: no-repeat;
 }
 
+.audio-selected {
+    display: normal;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    max-height: 75px;
+}
+
+.audio-not-selected {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    max-height: 75px;
+}
+
 #title {
     display: block;
     margin: auto;

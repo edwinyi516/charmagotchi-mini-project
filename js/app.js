@@ -49,21 +49,18 @@ class Tamagotchi {
                 alert(`Your egg hatched into a Charmander!`)
                 egg.style.display = "none"
                 charmander.style.display = "block"
-                charmanderSound.volume = .2
                 charmanderSound.play()
             }
             else if (character.level === 16) {
                 alert(`${character.name} evolved into a Charmeleon!`)
                 charmander.style.display = "none"
                 charmeleon.style.display = "block"
-                charmeleonSound.volume = .2
                 charmeleonSound.play()
             }
             else if (character.level === 36) {
                 alert(`${character.name} evolved into a Charizard!`)
                 charmeleon.style.display = "none"
                 charizard.style.display = "block"
-                charizardSound.volume = .2
                 charizardSound.play()
             }
         }, 5000)
@@ -99,6 +96,32 @@ let game = {
         }
         character = new Tamagotchi(username, 0, 0, 0, 0)
         nameValue.innerText = username
+    },
+    muteButton () {
+        if (audioOn.getAttribute("class") == "audio-selected") {
+            audioOn.setAttribute("class", "audio-not-selected")
+            audioMute.setAttribute("class", "audio-selected")
+            charmanderSound.volume = 0
+            charmeleonSound.volume = 0
+            charizardSound.volume = 0
+            owlSound.volume = 0
+            birdSound.volume = 0
+            gameboySound.volume = 0
+            daybgm.volume = 0
+            nightbgm.volume = 0
+        }
+        else if (audioMute.getAttribute("class") == "audio-selected") {
+            audioMute.setAttribute("class", "audio-not-selected")
+            audioOn.setAttribute("class", "audio-selected")
+            charmanderSound.volume = .2
+            charmeleonSound.volume = .2
+            charizardSound.volume = .2
+            owlSound.volume = 1
+            birdSound.volume = 1
+            gameboySound.volume = .3
+            daybgm.volume = .2
+            nightbgm.volume = .1
+        }
     },
     feedButton () {
         if (character.hunger > 0) {
@@ -192,6 +215,8 @@ const egg = document.querySelector("#egg")
 const charmander = document.querySelector("#charmander")
 const charmeleon = document.querySelector("#charmeleon")
 const charizard = document.querySelector("#charizard")
+const audioOn = document.querySelector("#audio-on")
+const audioMute = document.querySelector("#audio-mute")
 const charmanderSound = new Audio("sounds/charmander-sound.ogg")
 const charmeleonSound = new Audio("sounds/charmeleon-sound.ogg")
 const charizardSound = new Audio("sounds/charizard-sound.ogg")
@@ -209,13 +234,36 @@ start.addEventListener("click", () => {
     character.sleepinessInterval()
     character.boredomInterval()
     character.levelInterval()
-    gameboySound.volume = .3
+    if (audioOn.getAttribute("class") == "audio-selected") {
+        charmanderSound.volume = .2
+        charmeleonSound.volume = .2
+        charizardSound.volume = .2
+        owlSound.volume = 1
+        birdSound.volume = 1
+        gameboySound.volume = .3
+        daybgm.volume = .2
+        nightbgm.volume = .1
+    }
+    else if (audioMute.getAttribute("class") == "audio-selected") {
+        charmanderSound.volume = 0
+        charmeleonSound.volume = 0
+        charizardSound.volume = 0
+        owlSound.volume = 0
+        birdSound.volume = 0
+        gameboySound.volume = 0
+        daybgm.volume = 0
+        nightbgm.volume = 0
+    }
     gameboySound.play()
-    daybgm.volume = .2
-    nightbgm.volume = .1
     setTimeout(() => {
         daybgm.play().loop = true
     },1000)
+})
+audioOn.addEventListener("click", () => {
+    game.muteButton()
+})
+audioMute.addEventListener("click", () => {
+    game.muteButton()
 })
 feed.addEventListener("click", () => {
     game.feedButton()
@@ -227,5 +275,9 @@ play.addEventListener("click", () => {
     game.playButton()
 })
 lights.addEventListener("click", () => {
+    lights.disabled = true
     game.lightsButton()
+    setTimeout(() => {
+        lights.disabled = false
+    },1001)
 })
